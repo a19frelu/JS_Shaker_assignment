@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Shaker Assignment</title>
+
+    <!-- All styling in the document --> 
+    <style>
+        html {
+            background-color: antiquewhite;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        body {
+            background-color: rgb(209, 209, 209);
+            height: 80%;
+            width: 80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #picDiv {
+            top: 50%;
+            right: 50%;
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #innerDiv {
+            top: 50%;
+            right: 50%;
+            width: 50px;
+            height: 50px;
+            background-color: yellow;
+
+        }
+        p {
+            position: absolute;
+            top: 15%;
+            left: 15%;
+            font-size: calc(10px + 0.3vw);
+            transform: translateX(100px);
+        }
+
+    </style>
+    <script src="https://raw.githack.com/HGustavs/Shaker.js/master/shaker.js"></script>
+    <script>
+
+        function initShaker() {
+            shaker.on("tilt", function (edata) {
+                var picDiv = document.getElementById("picDiv");
+                var coordinates = document.getElementById("coordinates");
+                var x = edata.alpha;
+                var movementFactor = 0.5;
+
+                coordinates.innerHTML = "Coordinates: " + x;
+                if (x >= 100)
+                    document.getElementById("picDiv").style.transform = 'translateX(' + x * movementFactor + 'px)';
+                if (x <= 100)
+                    document.getElementById("picDiv").style.transform = 'translateX(' + (-x) * movementFactor + 'px)';
+            });
+        }
+
+    </script>
+</head>
+<body onload="initShaker()">
+    <div id="picDiv">
+        <div id="innerDiv"></div>
+    </div>
+    <p id="coordinates"></p>
+</body>
+</html>
