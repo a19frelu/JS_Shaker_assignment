@@ -38,7 +38,7 @@
             right: 50%;
             width: 50px;
             height: 50px;
-            background-color: yellow;
+            background-color: rgb(9, 255, 0);
 
         }
         p {
@@ -61,10 +61,15 @@
                 var movementFactor = 0.5;
 
                 coordinates.innerHTML = "Coordinates: " + x;
-                if (x >= 100)
+                if (x >= 110) {
                     document.getElementById("picDiv").style.transform = 'translateX(' + x * movementFactor + 'px)';
-                if (x <= 100)
+                }
+                else if (x <= 90) {
                     document.getElementById("picDiv").style.transform = 'translateX(' + (-x) * movementFactor + 'px)';
+                }
+                else {
+                    window.location.href = "https://wwwlab.iit.his.se/a19frelu/Mobilapplikationsdesign/JavaScript/JS_Shaker_Assignment/JS_Shaker_assignment_2.html";
+                }
             });
         }
 
