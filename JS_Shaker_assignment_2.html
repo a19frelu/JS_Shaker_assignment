@@ -30,8 +30,10 @@
 
     </style>
     <script src="https://raw.githack.com/HGustavs/Shaker.js/master/shaker.js"></script>
+    <script src="https://hammerjs.github.io/dist/hammer.min.js"></script>
     <script>
 
+        // Script for the step counter functions.
         var stepCounter = 0;
 
         shaker.on("step", function (o) {
@@ -41,7 +43,7 @@
         function step(){
             stepCounter++;
             document.getElementById("counter").innerHTML = stepCounter;
-            if(stepCounter >= 5) {
+            if(stepCounter >= 7) {
                 document.getElementById("counter").style.display = "none";
                 document.body.style.backgroundColor = "orange";
                 /* Play sound effekt */
@@ -49,6 +51,8 @@
                 document.getElementById("message").style.display = "block";
             }
         }
+
+        
 
     </script>
     
