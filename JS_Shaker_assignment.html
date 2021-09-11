@@ -41,12 +41,20 @@
             background-color: rgb(9, 255, 0);
 
         }
-        p {
+        #coordinates {
             position: absolute;
             top: 15%;
             left: 15%;
             font-size: calc(10px + 0.3vw);
-            transform: translateX(100px);
+            transform: translateX(80px);
+        }
+
+        p {
+            position: absolute;
+            bottom: 30%;
+            left: 20%;
+            font-size: calc(10px + 0.3vw);
+            transform: translateX(80px);
         }
 
     </style>
@@ -62,10 +70,10 @@
                 var movementFactor = 0.5;
 
                 coordinates.innerHTML = "Coordinates: " + x;
-                if (x >= 1) {
+                if (x >= 110) {
                     document.getElementById("picDiv").style.transform = 'translateX(' + x * movementFactor + 'px)';
                 }
-                else if (x <= 359) {
+                else if (x <= 90) {
                     document.getElementById("picDiv").style.transform = 'translateX(' + (-x) * movementFactor + 'px)';
                 }
                 else {
@@ -81,5 +89,6 @@
         <div id="innerDiv"></div>
     </div>
     <p id="coordinates"></p>
+    <p>Get coordinates to 100</p>
 </body>
 </html>
