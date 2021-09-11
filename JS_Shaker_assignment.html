@@ -62,10 +62,10 @@
                 var movementFactor = 0.5;
 
                 coordinates.innerHTML = "Coordinates: " + x;
-                if (x >= 110) {
+                if (x >= 1) {
                     document.getElementById("picDiv").style.transform = 'translateX(' + x * movementFactor + 'px)';
                 }
-                else if (x <= 90) {
+                else if (x <= 359) {
                     document.getElementById("picDiv").style.transform = 'translateX(' + (-x) * movementFactor + 'px)';
                 }
                 else {
