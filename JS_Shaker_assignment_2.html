@@ -52,13 +52,26 @@
             }
         }
 
-        
+        function init(){
+
+            // Get area where we listen for touch events
+            var toucharea = document.getElementById("container");
+
+            // Init Hammer
+            var mc = new Hammer(toucharea);
+
+            // Listen for doubletap gesture
+            mc.on("doubletap", function (event){
+                window.location.href = "https://wwwlab.iit.his.se/a19frelu/Mobilapplikationsdesign/JavaScript/JS_Shaker_Assignment/JS_Shaker_assignment.html";
+                console.log("Double tap done");
+            }); 
+        }
 
     </script>
     
 </head>
-<body>
-    <div class="container">
+<body onload="init();">
+    <div id="container">
         <div id="stepDiv">
             <h2 id="message"> Double tap to continue </h2>
             <h1 id="counter"> 0 </h1>
