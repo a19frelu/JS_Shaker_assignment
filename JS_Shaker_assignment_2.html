@@ -27,6 +27,16 @@
         #message{
             display: none;
         }
+        
+        #container {
+            touch-action: manipulation;
+        }
+
+        p {
+            position: absolute;
+            bottom: 25%;
+            right: 30%;
+        }
 
     </style>
     <script src="https://raw.githack.com/HGustavs/Shaker.js/master/shaker.js"></script>
@@ -43,12 +53,15 @@
         function step(){
             stepCounter++;
             document.getElementById("counter").innerHTML = stepCounter;
-            if(stepCounter >= 7) {
+            if(stepCounter >= 25) {
                 document.getElementById("counter").style.display = "none";
                 document.body.style.backgroundColor = "orange";
-                /* Play sound effekt */
-                document.getElementById("flipSide").play();
+                // Display double tap message
                 document.getElementById("message").style.display = "block";
+                // Removes the the "magic number message"
+                document.getElementById("magicNumber").style.display = "none";
+                // Play sound effekt
+                document.getElementById("flipSide").play();
             }
         }
 
@@ -77,6 +90,7 @@
             <h1 id="counter"> 0 </h1>
         </div>
     </div>
+    <p id="magicNumber">25 is the magic number</p>
     <audio id="flipSide">
         <source src="http://soundbible.com/grab.php?id=2068&type=mp3" type="audio/mpeg">
         Your browser does not support the audio element.
